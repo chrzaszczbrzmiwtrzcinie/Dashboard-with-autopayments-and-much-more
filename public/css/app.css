@@ -1,0 +1,363 @@
+
+.rounded-square {
+    width: 100%; /* Size of the square */
+    height: 100%; /* Size of the square */
+    background-color: #ffffff; /* Color of the square */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.1), /* First shadow */
+        0 10px 60px rgba(109, 74, 255, 0.16); /* Second shadow */
+}
+@media (min-width:1000px) {
+    .rounded-square {
+        width: 1000px; /* Size of the square */
+        height: 616px; /* Size of the square */
+        background-color: #ffffff; /* Color of the square */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow:
+            0 4px 30px rgba(0, 0, 0, 0.1), /* First shadow */
+            0 10px 60px rgba(109, 74, 255, 0.16); /* Second shadow */
+    }
+}
+
+.spacebetwinbox {
+    padding: 0.5rem;
+
+}
+@media (min-width:1000px) {
+    .spacebetwinbox {
+        padding: 0px 2.75rem 2.75rem;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Default font */
+    margin: 0; /* Reset default margin */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0; /* Background color of the body */
+}
+
+/* Flex container for the entire row */
+.flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+/* Flex container adjustments for different screen sizes */
+@media (min-width: 768px) {
+    .items-center {
+        align-items: center;
+    }
+    .flex-row {
+        flex-direction: row;
+    }
+    .gap-4 {
+        gap: 1rem; /* 4 times the base unit, adjust as needed */
+    }
+}
+
+@media (min-width: 750px) {
+    .flex-row{
+        flex-direction: column;
+    }}
+.flex-row {
+    flex-direction: row;
+}
+
+/* For smaller screens */
+
+
+.gap-2 {
+    gap: 1rem; /* 2 times the base unit, adjust as needed */
+}
+
+/* Non-flexbox styles */
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+/* Step label styles */
+.step-label {
+    padding: 0.5rem; /* Adjust padding as needed */
+    background-color: #dddddd; /* Replace with your 'norm-weak' color */
+    color: #007bff; /* Replace with your 'primary' color */
+    font-size: 0.875rem; /* Small text size */
+    font-weight: bold; /* Bold text */
+    border-radius: 0.125rem; /* Slightly rounded corners */
+}
+
+/* Heading styles */
+.text-bold {
+    font-weight: bold; /* Bold text */
+}
+
+.text-4xl {
+    font-size: 1.7142857143em; /* Large text size, adjust as needed */
+}
+
+.flex-1 {
+    flex: 1;
+}
+.pis{
+    padding-bottom:50px;
+}
+@media (min-width:1000px)
+{
+    .pis{padding-bottom:0;
+        padding-top:10px}
+}
+.pis{margin:100px 0}
+@media (min-width:1000px)
+{.pis{max-width: fit-content}
+}
+.pis{
+    height: 100%;
+    width: 100%;
+}
+@media (min-width:1000px) {
+    .pis {
+        height: 100%;
+        width: 100%;
+    }
+}
+.productimage {
+    min-width: 45%;
+    border-radius: 15px;
+    background-image: linear-gradient(180deg,#40395f,#1b1340);
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Distribute space evenly */
+}
+@media (min-width:1000px) {
+.productimage {
+    min-width: 65%;
+    border-radius: 15px;
+    width: 567px;
+    height: 425px;
+    background-image: linear-gradient(180deg,#40395f,#1b1340);
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Distribute space evenly */
+}
+}
+.primarycolor {
+    color: #6d4aff;
+    font-weight: bold;
+    background-color: #efecfd;
+    border-radius: 10px;
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.1), /* First shadow */
+        0 10px 60px rgba(109, 74, 255, 0.16); /* Second shadow */
+}
+.paybutton {
+    background-color: #50a0ff;
+    border: 1px solid #00000000;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    padding-block: 0.5625em;
+    padding-inline: 1.1875em;
+    text-align: center;
+    transition: .15s cubic-bezier(.22,1,.36,1),background-position 0s;
+    margin-top: auto;
+    font-weight: bold;
+    border-radius: 15px;
+}
+.buttonstripe {
+    background-color: #6d4aff;
+    border-radius: 15px;
+    width: 100%;
+}
+.buttonpaypal {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Horizontally centers content */
+    background-size: contain; /* Ensures the image fits within the button */
+    width: 100%; /* Full width of its container */
+    height: 100%; /* Full height of its container */
+    background-color: #ffc439; /* Background color */
+    border: none; /* Removes border */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    border-radius: 15px;
+}
+.buttonfunpay {
+    border-radius: 15px;
+    background-color: #1877f2;
+}
+.blue {
+    color: #2790c3;
+}
+.darkblue{
+    color: #27346a;
+}
+.checkoutcontent {
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.x {
+    gap: 24px; /* Assuming 1 unit = 4px, so 6 units = 24px */
+}
+
+/* Medium devices (e.g., tablets, 768px and up) */
+@media (min-width: 768px) {
+    .x {
+        gap: 56px; /* Assuming 1 unit = 4px, so 14 units = 56px */
+    }
+}
+
+.x {
+    flex-direction: column;
+}
+
+/* Large devices (e.g., desktops, 1024px and up) */
+@media (min-width: 1024px) {
+    .x {
+        display: flex;
+        flex-direction: row;
+    }
+}
+.chujsection {
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Stacks children vertically */
+}
+.productinfo {
+    border: 1px solid #CCCCCC;
+    border-radius: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin: 5px;
+
+}
+.rounded-xl {
+    border-radius: 1rem;
+}
+.px-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.primarycolorblack {
+    color: #000000;
+    font-weight: bold;
+}
+.gap-1 {
+    gap: 1.25rem; /* Assuming 1 unit = 0.25rem */
+}
+.gap-3 {
+    gap: 0.75rem;
+}
+
+.border {
+    border: 1px solid; /* Standard border */
+}
+
+.border-weak {
+    border-color: #CCCCCC; /* Lighter border color */
+    padding: 5px;
+}
+.primarycolorblacksmall {
+    font-size: 11px;
+    color: #6d4aff;
+    font-weight: bold;
+}
+.flexpanel {
+    flex-direction: column;
+    display: flex;
+    gap: 0.75rem;
+}
+
+
+/* Dropdown menu initially hidden */
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    /* Other styles */
+}
+
+/* Show class to display the dropdown */
+.show {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Styles for dropdown items */
+.dropdown-item {
+    /* Styles for the items */
+}
+.padding {
+    padding: 10px;
+}
+.productname {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 40px;
+    display: flex;
+}
+.clientname {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 40px;
+}
+.product {
+    background: url(../qradar.png) no-repeat;
+    background-size: contain;
+    height: 250px;
+    pointer-events: none;
+    margin-left: auto;
+    width: 240px;
+}
+.off {
+    margin-left: auto;
+}
+.priceoff {
+    border-radius: 9999px; /* equivalent to rounded-full */
+    padding-top: 3.5px;
+    padding-bottom: 3.5px;
+    padding-left: 14.5px;
+    padding-right: 14.5px;
+    vertical-align: middle; /* for inline or inline-block elements */
+    font-size: 16px; /* standard base text size */
+    font-weight: bold;
+    background-color: #34D399; /* approximate color for bg-emerald-400 */
+    color: #4C1D95; /* approximate color for text-purple-900 */
+}
+
+.margin3 {
+    margin-top: 30px;
+}
+.primaryblack {
+    color: #000000;
+}
+.subtitle {
+    margin-top: 15px;
+    font-size: 1.425rem;
+    line-height: 1.55;
+    color: #262a33;
+}
+.primerycolorred {
+    color: #ff0000;
+}
+.icon {
+    padding-top: 28px;
+    padding-left: 20px;
+}
+.decorator {
+    text-decoration: none;
+}
+
+

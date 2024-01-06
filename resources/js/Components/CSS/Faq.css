@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'wotfard';
+  src: url('../CSS/images/wotfard.woff2') format('woff2');
+    }
+@font-face {
+    font-family: 'bolt';
+    src: url('../CSS/images/bolt.woff2') format('woff2');
+}
+
+
+h2 {
+    -webkit-text-fill-color: white;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 800;
+    font-family: 'bolt';
+}
+    
+  
+@media (min-width: 1000px){
+.section-faq {
+    margin-top: 160px;
+}}
+.selection-faq{
+    margin-top: 80px;
+}
+
+    @media (min-width: 1300px){
+.containerdofaq {
+    max-width: 1224px;
+    margin-top: 50px;
+}}
+.margin {
+    margin-top: 50px;
+}
+@media (min-width: 1000px){
+.accordion {
+    grid-gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}}
+.accordion-item {
+    max-width: 600px;
+}
+.accordion-button {
+    border: none;
+    background-color: #0000ff00;
+    text-align: left;
+    padding: 2px;
+}
+.h2.accordion-header {
+    -webkit-text-fill-color: white;
+    color: white;
+}
+.accordion-button.collapsed::after {
+    background: url(../CSS/images//arrow.svg) no-repeat 50%;
+    content: "";
+    height: 21px;
+    width: 30px;
+    position: absolute;
+    transition: transform .3s ease;
+}
+.accordion-button::after{
+    background: url(../CSS/images//arrowdown.png) no-repeat 50%;
+    content: "";
+    height: 21px;
+    width: 30px;
+    position: absolute;
+    transition: transform .3s ease;
+    
+    
+}

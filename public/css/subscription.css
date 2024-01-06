@@ -1,0 +1,90 @@
+.products-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-between; /* Spaces out items evenly */
+}
+.productname {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 40px;
+    display: flex;
+}
+.clientname {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 40px;
+}
+.product {
+    background-size: contain;
+    height: 250px;
+    pointer-events: none;
+    margin-left: auto;
+    width: 240px;
+}
+.productimage {
+    min-width: 65%;
+    border-radius: 15px;
+    width: 567px;
+    height: 425px;
+    background-image: linear-gradient(180deg,#40395f,#1b1340);
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Distribute space evenly */
+}
+@media (max-width: 600px) {
+    .productimage {
+        width: 100%;
+    }
+}
+.margin2 {
+    margin: 20px
+}
+.product-item {
+
+    margin: 5px; /* Optional margin for spacing */
+    color: #000;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), /* First shadow */
+    0 10px 60px rgba(109, 74, 255, 0.16);
+}
+.products-container > div { /* Assuming each product is a div */
+    margin-top: 20px; /* Space at the top of each product */
+}
+.off {
+    margin-left: auto;
+}
+.priceoff {
+    border-radius: 9999px; /* equivalent to rounded-full */
+    padding-top: 3.5px;
+    padding-bottom: 3.5px;
+    padding-left: 14.5px;
+    padding-right: 14.5px;
+    vertical-align: middle; /* for inline or inline-block elements */
+    font-size: 16px; /* standard base text size */
+    font-weight: bold;
+    background-color: #34D399; /* approximate color for bg-emerald-400 */
+    color: #4C1D95; /* approximate color for text-purple-900 */
+}
+@media (max-width: 600px) {
+    .priceoff {
+        padding-left: 26.5px;
+    }
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 1.425rem;
+    line-height: 1.55;
+    color: #262a33;
+}
+.primarycolor {
+    color: #6d4aff;
+    font-weight: bold;
+    background-color: #efecfd;
+    border-radius: 10px;
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.1), /* First shadow */
+        0 10px 60px rgba(109, 74, 255, 0.16); /* Second shadow */
+}

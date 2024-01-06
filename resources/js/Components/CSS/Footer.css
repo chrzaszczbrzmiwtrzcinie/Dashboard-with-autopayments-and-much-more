@@ -1,0 +1,205 @@
+.container{
+  margin: auto;
+  max-width: 1200px;
+}
+
+h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  font-family: Wotfard,Arial,serif;
+  font-size: 14px;
+  letter-spacing: .03em;
+}
+
+.title {
+  font-family: Wotfard,Arial,serif;
+  font-weight: 300;
+  text-align: center;
+}@media (min-width:1000px) {
+  .title {
+    text-align: left;
+  }}
+
+  .title2 {
+    font-family: Wotfard,Arial,serif;
+    font-weight: 300;
+    text-align: center;
+  }@media (min-width:1000px) {
+    .title2 {
+      text-align: center;
+      margin-top: 12px;
+    }}
+
+
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order: 6;
+}@media (min-width:1000px) {
+  .center {
+    order: unset;
+  }}
+
+@media (min-width:1000px) {
+.footerlist {
+grid-template-columns: repeat(3,1fr);
+}}
+.footerlist {
+  display: grid;
+  gap: 50px;
+  padding: 30px 0;
+}
+
+.fuck {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}@media (min-width:1000px) {
+  .fuck {
+    justify-content: flex-start;
+  }}
+.links {
+  margin-right: 40px;
+  color: white;
+  font-weight: 500;
+  letter-spacing: .02em;
+  line-height: 15px;
+  text-decoration: none;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  margin: 14px;
+}
+
+
+  
+
+  .icons {
+    background: url(../CSS/images/facebook.svg) no-repeat 50%;
+    background-size: contain;
+    height: 24px;
+    margin: 14px;
+    width: 24px;
+  }
+  .facebook {
+    background-image: url(../CSS/images/facebook.svg);
+    background-size: contain;
+    height: 24px;
+    margin: 14px;
+    width: 24px;
+  }
+.telegram {
+  background-image: url(../CSS/images/telegram.svg);
+  background-size: contain;
+  height: 24px;
+  margin: 14px;
+  width: 24px;
+}
+.instagram {
+  background-image: url(../CSS/images/instagram.svg);
+  background-size: contain;
+  height: 24px;
+  margin: 14px;
+  width: 24px;
+}
+.linkedin {
+  background-image: url(../CSS/images/linkedin.svg);
+  background-size: contain;
+  height: 24px;
+  margin: 14px;
+  width: 24px;
+}
+
+.letsfckschool {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width:1000px) {
+  .upfooter {
+  grid-template-columns: repeat(3,1fr);
+  }}
+  .upfooter {
+    display: grid;
+    gap: 50px;
+    padding: 30px 0;
+  }
+
+@media (min-width:1000px) {
+.someinfo{
+  align-items: flex-start;
+}}
+.someinfo {
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.location {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order: -1;
+}@media (min-width:1000px) {
+  .location{
+  order: 0;
+  align-items: unset;
+}}
+
+.pages {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pages-menu {
+  align-items: center;
+  display: grid;
+  gap: 14px 24px;
+  grid-template-columns: repeat(3,1fr);
+  justify-content: end;
+  width: 100%;
+
+}@media (min-width:1000px){
+  .pages-menu{
+    column-gap: 42px;
+    grid-template-columns: repeat(2,130px);
+  }}
+
+.big {
+font-size: 20px;
+font-weight: 500;
+line-height: 25px;
+margin: 8px 0 5px;
+font-weight: bold;
+}
+.small {
+  font-size: 16px;
+}
+.icn {
+  background: url(../CSS/images/pointer.png) no-repeat 50%;
+}
+.pointer {
+  background-image: url(../CSS/images/pointer.png);
+  background-size: contain;
+  height: 30px;
+  margin: 14px;
+  width: 39px;
+}
+.Footerbackground{
+  background: linear-gradient(178deg,#000 4%,#00ffff0d),url(../CSS/images/footer.png);
+}
+.nav2{
+  background: linear-gradient(1deg,#000 4%,#00ffff0d),url(../CSS/images/footer.png);
+}

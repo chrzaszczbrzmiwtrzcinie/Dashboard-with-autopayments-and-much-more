@@ -1,0 +1,72 @@
+{
+    "private": true,
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "dev": "npm run development",
+        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
+        "watch-poll": "npm run watch -- --watch-poll",
+        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "prod": "npm run production",
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.22.7",
+        "@babel/preset-react": "^7.22.5",
+        "axios": "^0.27",
+        "babel-loader": "^9.1.3",
+        "cross-env": "^7.0.3",
+        "laravel-mix": "^6.0.19",
+        "laravel-vite-plugin": "^0.5.0",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.63.6",
+        "sass-loader": "^12.1.0",
+        "vite": "^3.0.0",
+        "webpack": "^5.88.1",
+        "webpack-cli": "^5.1.4"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.10.4",
+        "@emotion/styled": "^11.10.4",
+        "@mui/material": "^5.10.3",
+        "@testing-library/jest-dom": "^5.11.9",
+        "@testing-library/react": "^11.2.5",
+        "@testing-library/user-event": "^12.6.3",
+        "aos": "^3.0.0-beta.6",
+        "bootstrap": "^4.6.2",
+        "jquery": "^3.5.1",
+        "react": "^17.0.1",
+        "react-bootstrap": "^2.5.0",
+        "react-dom": "^17.0.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "^5.0.1",
+        "swiper": "^8.3.2",
+        "web-vitals": "^1.1.0"
+    },
+    "name": "modern_react_navbar",
+    "version": "0.1.0",
+    "homepage": "https://albioncheat.online/",
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
