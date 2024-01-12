@@ -15,40 +15,35 @@
         <span>or use your email for registeration</span>
     </div>
     <div class="form-container sign-in">
-        <form action="{{route('register-user')}}" method="post">
-            @if(Session::has('success'))
-                <div class="alert alert-success">{{ Session::get('success') }}</div>
-            @endif
-            @if(Session::has('fail'))
-                <div class="alert alert-danger">{{ Session::get('fail') }}</div>
-            @endif
+        @if($errors->any())
+            @foreach($errors->all() as $error)
+                <div class="alert alert-danger">{{$error}} </div>
+            @endforeach
+        @endif
+        <form action="{{route('forget.password.post')}}" method="POST">
             @csrf
-            <div class="form-group">
-                <h1>Create Account</h1>
-                <input type="text" class="form-control" placeholder="Enter Login"
-                       name="name" value="{{old('name')}}">
-                <span class="text-danger">@error('email'){{$message}} @enderror</span>
-            </div>
+            <h1>Type Email</h1>
             <div class="form-group">
                 <label for="email">Enter Email</label>
                 <input type="text" class="form-control" placeholder="Enter Email"
                        name="email" value="{{old('email')}}">
                 <span class="text-danger">@error('email'){{$message}} @enderror</span>
             </div>
-            <div class="form-group">
-                <label for="password">Enter Password</label>
-                <input type="password" class="form-control" placeholder="Enter Password"
-                       name="password" value="{{old('password')}}">
-                <span class="text-danger">@error('password'){{$message}} @enderror</span>
-            </div>
             {!! NoCaptcha::renderJs() !!}
             {!! NoCaptcha::display() !!}
             <div>
-                <button class="recaptcha btn btn-block btn-primary"
+                <a href="#"> <button class="recaptcha btn btn-block btn-primary"
                         data-sitekey="6Lfm-DwpAAAAAERLF2_12-thP-xVtflQDytK-eJx" data-callback='onSubmit'
-                        data-action='registration' type="submit">Register
+                        data-action='resetpassword' type="submit">Reset Password
                 </button>
+                </a>
             </div>
+            @if(session()->has('error'))
+                <div class="alert alert-danger">{{session ('error')}} </div>
+            @endif
+            @if(Session::has('success'))
+                <div class="alert alert-success">{{ Session::get('success') }}</div>
+            @endif
         </form>
     </div>
     <div class="toggle-container">

@@ -32,7 +32,7 @@ Route::get('/stripesuccess', [StripeController::class, 'stripesuccess'])->name('
 Route::get('/cancel', [StripeController::class, 'cancel'])->name('checkout.cancel');
 Route::post('/webhook', [StripeController::class, 'webhook'])->name('checkout.webhook');
 //Auth website
-Route::get('/login',[CustomAuthController::class,'login'])->middleware('alreadyLoggedIn');
+Route::get('/login',[CustomAuthController::class,'login'])->middleware('alreadyLoggedIn')->name('login');
 Route::get('/registration',[CustomAuthController::class,'registration'])->middleware('alreadyLoggedIn')->name('registration');
 Route::post('/register-user',[CustomAuthController::class,'registerUser'])->name('register-user');
 Route::post('/login-user',[CustomAuthController::class,'loginUser'])->name('login-user');
@@ -42,6 +42,10 @@ Route::get('/social',[CustomAuthController::class,'socialmedia'])->middleware('i
 Route::get('/download',[CustomAuthController::class,'download'])->middleware('isLoggedIn');
 Route::get('/jarlpanel', [AdminController::class, 'adminpanel'])->middleware('isAdmin');
 Route::post('/update-logindate', [AdminController::class, 'updateLoginDate'])->middleware('isLoggedIn');
+Route::get('/forget-password', [CustomAuthController::class, 'forgetPassword'])->middleware('isLoggedIn')->name('forget.password');
+Route::post('/forget-password', [CustomAuthController::class, 'forgetPasswordPost'])->name('forget.password.post')->middleware('isLoggedIn');
+Route::get('/reset-password/{token}', [CustomAuthController::class, 'resetPassword'])->name('reset.password')->middleware('isLoggedIn');
+Route::post('/reset-password/', [CustomAuthController::class, 'resetPasswordPost'])->name('reset.password.post')->middleware('isLoggedIn');
 
 Route::get('/logout',[CustomAuthController::class,'logout']);
 Route::post('/product', [\App\Http\Controllers\CheckOutController::class, 'selectProduct'])->name('selectProduct');

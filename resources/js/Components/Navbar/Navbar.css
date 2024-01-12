@@ -57,7 +57,7 @@ i {
   position: relative;
 }
 #navbarSupportedContent > ul > li.active > a {
-  
+
   background-color: transparent;
   transition: all 0.7s;
 }@media (max-width: 991px) {

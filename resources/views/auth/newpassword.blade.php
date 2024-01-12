@@ -15,38 +15,39 @@
         <span>or use your email for registeration</span>
     </div>
     <div class="form-container sign-in">
-        <form action="{{route('register-user')}}" method="post">
-            @if(Session::has('success'))
-                <div class="alert alert-success">{{ Session::get('success') }}</div>
-            @endif
-            @if(Session::has('fail'))
-                <div class="alert alert-danger">{{ Session::get('fail') }}</div>
-            @endif
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+        <form action="{{ route('reset.password.post') }}" method="POST">
             @csrf
+            <h1>Type Email</h1>
             <div class="form-group">
-                <h1>Create Account</h1>
-                <input type="text" class="form-control" placeholder="Enter Login"
-                       name="name" value="{{old('name')}}">
-                <span class="text-danger">@error('email'){{$message}} @enderror</span>
+                <label for="email">Account key</label>
+                <input type="text" class="form-control" placeholder="Account key"
+                       name="key" value="{{old('key')}}">
+                <span class="text-danger">@error('key'){{$message}} @enderror</span>
             </div>
             <div class="form-group">
-                <label for="email">Enter Email</label>
                 <input type="text" class="form-control" placeholder="Enter Email"
                        name="email" value="{{old('email')}}">
                 <span class="text-danger">@error('email'){{$message}} @enderror</span>
             </div>
             <div class="form-group">
-                <label for="password">Enter Password</label>
-                <input type="password" class="form-control" placeholder="Enter Password"
-                       name="password" value="{{old('password')}}">
-                <span class="text-danger">@error('password'){{$message}} @enderror</span>
+                <input type="password" class="form-control" placeholder="password" name="password">
+                <span class="text-danger">@error('password'){{ $message }} @enderror</span>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" name="password_confirmation">
+                <span class="text-danger">@error('password'){{ $message }} @enderror</span>
             </div>
             {!! NoCaptcha::renderJs() !!}
             {!! NoCaptcha::display() !!}
             <div>
                 <button class="recaptcha btn btn-block btn-primary"
                         data-sitekey="6Lfm-DwpAAAAAERLF2_12-thP-xVtflQDytK-eJx" data-callback='onSubmit'
-                        data-action='registration' type="submit">Register
+                        data-action='resetpassword' type="submit">Reset password
                 </button>
             </div>
         </form>
@@ -73,3 +74,4 @@
 </body>
 
 </html>
+

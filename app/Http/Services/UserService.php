@@ -4,9 +4,13 @@ namespace App\Http\Services;
 
 
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class UserService
 {
@@ -63,5 +67,52 @@ class UserService
         }
     }
 
+    public function forgetservice(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email|exists:users',
+            'g-recaptcha-response' => 'required|captcha',
+        ]);
+
+        $token = Str::random(64);
+        $key = Str::random(9);
+        DB::table('password_resets')->insert([
+            'email' => $request->email,
+            'token' => $token,
+            'key' => $key,
+            'created_at' => Carbon::now()
+        ]);
+        Mail::send('auth.resetpassword', ['token' => $token, 'key' => $key], function ($message) use ($request) {
+            $message->to($request->email);
+            $message->subject('Reset Password');
+        });
+        session()->flash('success', 'We sent an email. Check your inbox.');
+        return redirect()->route('login');
+    }
+
+    public function resetpasswordpostservice(Request $request)
+    {
+        $request->validate([
+            'key' => 'required|string|exists:password_resets,key',
+            'email' => 'required|email|exists:users',
+            'password' => 'required|string|min:6|max:12|confirmed',
+            'password_confirmation' => 'required'
+        ]);
+
+        $updatepassword = DB::table('password_resets')
+            ->where([
+                'email' => $request->email,
+                'key' => $request->key,
+            ])->first();
+
+        if (!$updatepassword) {
+            return redirect()->to(route('forget.password'))->with('error', 'Invalid token.');
+        }
+
+        User::where('email', $request->email)->update(['password' => Hash::make($request->password)]);
+        DB::table('password_resets')->where(['email' => $request->email])->delete();
+
+        return redirect()->to(route('login'))->with('success', 'Password is updated.');
+    }
 }
 

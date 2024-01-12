@@ -6,6 +6,7 @@ use App\Http\Services\UserService;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Services\SubscriptionService;
@@ -78,6 +79,22 @@ class CustomAuthController extends Controller
         $this->SubscriptionService->dayscalculator();
         $data = User::where('id','=', Session::get('loginId'))->first();
         return view("auth.download", compact('data'));
+    }
+
+    public function forgetPassword() {
+        return view('auth.forgetpassword');
+    }
+    public function forgetPasswordPost(Request $request) {
+        $this->userService->forgetservice($request);
+    }
+    public function resetPassword(Request $request) {
+        $token = $request->query('token');
+        return view('auth.newpassword', compact('token'));
+    }
+    public function resetPasswordPost(Request $request){
+        $this->userService->resetpasswordpostservice($request);
+        $token = $request->query('token');
+        return view('auth.newpassword', compact('token'));
     }
 
 }
