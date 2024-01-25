@@ -11,12 +11,18 @@ This project is a feature-rich dashboard with autopayments functionality and var
 - Purchase and extend subscriptions
 - Change passwords
 - File download with purchase validation
-
+- 3D Payment methods
+- Support options
+- Media section
+- Responsive for mobile devices
+- Calculating user subscriptions
 ---
 
 ### API Documentation:
 
 - JWT-based authentication for external applications
+- Checking if user subscription is active
+- Secure endpoint
 
 ---
 
@@ -24,6 +30,10 @@ This project is a feature-rich dashboard with autopayments functionality and var
 
 - Refresh subscriptions for all users
 - Change user passwords
+- List of all users
+- List of all paid users
+- Current days of all users
+- Rest data about users...
 
 ---
 
